@@ -1,7 +1,11 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import java.io.File
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main(args: Array<String>) {
+    println("Input the image filename:")
+    val image = File(readln())
+    if (image.exists()) {
+        Image(image).properties()
+    } else {
+        println("The file ${image.name} doesn't exist.")
+    }
 }
